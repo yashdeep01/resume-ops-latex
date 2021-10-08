@@ -1,0 +1,134 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2015 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[12pt, a4paper]{moderncv}
+
+
+% moderncv themes
+\moderncvstyle{banking}
+\moderncvcolor{black}
+\nopagenumbers{}
+% character encoding
+\usepackage[utf8]{inputenc}                     % set encoding
+\usepackage[scale=0.80, top=5em, bottom=5em]{geometry}               % customize paper
+\usepackage[unicode]{hyperref}                  % to use hyperlinks
+\usepackage{xcolor}                             % better colors
+\usepackage{color}                              % syntactic sugar
+% Font settings
+\usepackage[T1]{fontenc}
+% Serif body font
+\usepackage{charter}
+% Math font
+\usepackage[charter]{mathdesign}
+% Monospaced font
+\usepackage{sourcecodepro}
+\usepackage{tfrupee}
+% \usepackage[useregional]{datetime2}
+% Sans-serif font
+% \usepackage[lf]{FiraSans}
+\recomputelengths   
+% Setup fonts
+\renewcommand*{\namefont}{\fontsize{24}{29}\mdseries\upshape}
+%\renewcommand{\familydefault}{\sfdefault}
+
+% Setup bullet points
+\renewcommand{\labelitemi}{\scriptsize\color{black}{$\bullet$}}
+
+
+% PERSONAL DATA --------------------------------------------------------
+\firstname{John}
+\familyname{Doe}
+\address{Manhattan, New York City NY, USA}
+\email{john.doe@company.com}
+\mobile{+1 (912) 999-9999}
+\social[twitter]{johndoe}
+\social[github]{johndoe}
+\social[linkedin]{johndoe}
+\extrainfo{Last updated: \today}
+% \title{Resume}
+
+\begin{document}
+
+\maketitle
+% \vspace{-4px}
+% EDUCATION ------------------------------------------------------------
+\section{Education}
+\cventry{Aug 2019 -- Jul 2021}
+{M.S. Data Science}
+{New York University}
+{New York City NY, USA}{}{}
+
+\cventry{Aug 2016 -- Jul 2019}
+{B.S. Computer Science}
+{University of Florida}
+{Gainesville FL, USA}
+{}{Overall GPA: 3.59}
+
+% EXPERIENCE -----------------------------------------------------------
+\section{Experience}
+\cventry{Aug 2020 -- Jun 2021}
+{Data Science Intern}
+{Company A}
+{Los Angeles CA, USA}{Credit Risk}
+{
+    % \vspace{4px}
+    \textit{Machine Learning Team (Jan 2021 -- Jun 2021)}
+    \begin{itemize}
+        \item Developed novel attention-based transformer model for identifying customer 
+        and seller risks on USA marketplace
+        \item Improved prediction accuracy by \textbf{XX bps} (in AUC); 
+        reduced model re-calibration frequency to weekly
+    \end{itemize}
+}
+\vspace{4px}
+\cventry{May 2018 -- Jul 2018}
+{Summer Intern}
+{Company B}
+{New York City NY, USA}{Remote Learning Department}
+{
+    \begin{itemize}
+        \item Developed open-source ed-tech plugin for retrieving, 
+        processing, and visualising state \& county 
+        level enrolments; plugin captures US data from 
+        500+ constituencies
+    \end{itemize}
+}
+
+% PROJECTS ----------------------------------------------------------
+\section{Projects}
+\begin{itemize}
+    \item \textbf{Longitudinal Regression}: Investigated effects of phishing attacks on network pings.
+    \item \textbf{Recommender system}: SVD, CUR, collaborative filtering on 17 million+ e-commerce ratings.
+    \item \textbf{Sea Temperature Forecasting}: SARIMAX forecasting web-app;
+    \textbf{\color{blue}\httplink[johndoe/Forecasting]{https://github.com/johndoe/Forecasting}}
+\end{itemize}
+
+% PUBLICATIONS ------------------------------------------------------------------------------------------------------------
+\section{Publications}
+\begin{itemize}
+    \item Cooper, D., Smith, P., \& \textbf{Doe, J.} (2021, October 7). 
+    \textit{Auto Feature Engineering for Credit Risk Prevention}. 
+    2nd Workshop on ML in Fraud, Abuse, Credit Risk, and Security, 
+    International Machine Learning Conference 2021, Los Angeles, CA, USA.
+    \item Khan, S., Malik, S., \textbf{Doe, J.}, \& Karinski, V. (2021). 
+    \textit{Effects of Phishing Attacks on Network Latency}. 
+    Manuscript submitted for publication.
+\end{itemize}
+
+
+% TECHNICAL SKILLS -------------------------------------------------------------------------------------------------------
+\section{Technical Skills}
+\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}}l }
+    Languages & Python, R, STATA, Java, C++, C, SQL, \LaTeX \\
+    Data Wrangling & SQL, PySpark, pandas, STATA, R, MS Excel\\
+    AWS Tools & Sagemaker, EC2, Redshift, S3 \\
+    Developer Tools & Docker, Unix, Git, web-scraping \\
+    Web Skills & HTML5, CSS, Liquid, WordPress, SEO \\
+\end{tabular}
+
+\end{document}
