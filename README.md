@@ -56,6 +56,14 @@ LaTeX should automatically be able to run and compile in a cloud instance somewh
     git commit -m "Update resume"
     git push   
     ```
+    You can also create an alias in `.gitconfig` under the `[alias]` tag. Here's how to do it:
+    ```
+    vi ~/.gitconfig
+
+    # Press `i` and then type the following:
+    [alias]
+        update-resume = !git pull && git add . && git commit -m 'Update resume' && git push
+    ```
 - In order to avoid duplication, `.gitignore` attempts to remove any PDFs in the root folder of the repo because our workflow is also generating PDFs at `./resumes`. This can be changed according to the user's discretion.
 
 ## :gear: Workflow
