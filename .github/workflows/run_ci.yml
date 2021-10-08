@@ -1,0 +1,46 @@
+name: resume-devops
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    outputs: 
+      deploy-status: ${{ steps.changed-tex-files.outputs.any_changed }}
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      
+      - name: Get changed .tex files
+        id: changed-tex-files
+        uses: tj-actions/changed-files@v1.1.3
+        with:
+          separator: ","
+          files: |
+            .(tex)$
+
+      - name: Generate PDF from changed tex files
+        id: compile-changed-tex-files
+        if: steps.changed-tex-files.outputs.any_changed == 'true'
+        run: |
+          IFS=',' read -r -a array <<< "${{ steps.changed-tex-files.outputs.all_modified_files }}"
+          for file in "${array[@]}"; do
+            echo "$file was changed"
+            echo "Generating PDF from Tex"
+            ./latexdockercmd.sh latexmk -outdir=./_build -pdf "$file"
+            ./latexdockercmd.sh latexmk -c
+          done
+          mv ./_build/*pdf ./resumes/
+          rm -rf ./_build
+
+      - name: Add, commit, push files
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Compile resume(s) with Github Actions
+      
+      
