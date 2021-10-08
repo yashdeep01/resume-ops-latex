@@ -67,7 +67,7 @@ Our YAML file `.github/workflows/run_ci.yml` does the following things in order 
 
 
 
-![Workflow](assets/images/workflow.png)
+![Workflow](assets/images/gh_actions_workflow.png)
 
 ## Acknowledgements
 - Docker image to compile my LaTeX files: <https://github.com/blang/latex-docker>
