@@ -64,6 +64,10 @@ LaTeX should automatically be able to run and compile in a cloud instance somewh
     [alias]
         update-resume = !git pull && git add . && git commit -m 'Update resume' && git push
     ```
+    Now, every time you want to publish changes to your resume(s), run:
+    ```
+    git update-resume
+    ```
 - In order to avoid duplication, `.gitignore` attempts to remove any PDFs in the root folder of the repo because our workflow is also generating PDFs at `./resumes`. This can be changed according to the user's discretion.
 
 ## :gear: Workflow
